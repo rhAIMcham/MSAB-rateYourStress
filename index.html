@@ -135,15 +135,24 @@ button:hover {
   font-weight: 600;
   font-size: 1.1rem;
 }
+  .labelSmall {
+  display: none;
+}
    @media screen and (max-width: 800px) {
 .buttonBar {
   display: flex;
   flex-wrap: wrap;
 }
+     .labelSmall {
+  display: none;
+}
 }
      @media screen and (max-width: 300px) {
 form {
   display: none;
+}
+       .labelSmall {
+  display: block;
 }
 }
 </style>
@@ -362,6 +371,7 @@ function hideButton() {
  //TODO: refactor to use switch? with range declared elsewhere
 </script>
 </html>
+
 
 
 
