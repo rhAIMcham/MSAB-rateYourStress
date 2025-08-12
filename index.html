@@ -124,7 +124,16 @@ button:hover {
 
 .buttonBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+.hiddenButton {
+  display: none;
+}
+#results {
+  text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
    @media screen and (max-width: 800px) {
 .buttonBar {
@@ -304,9 +313,10 @@ button:hover {
 </form>
 
 <div class="buttonBar">
-  <p id="results"></p>
-<button onclick="show()">Results</button>
+
+<button id="hideMe" onclick="show(); hideButton()">Results</button>
 </div>
+    <p id="results"></p>
 </div>
 </body>
 
@@ -323,7 +333,11 @@ function calculate(form) {
   });
   form.elements.result.value = score;
 }
- 
+  
+function hideButton() {
+  var z = document.getElementById("hideMe");
+  z.classList.toggle("hiddenButton");
+ }
 
  function show() {
   var x = Number(document.getElementById("numericalResult").value);
@@ -343,6 +357,7 @@ function calculate(form) {
  //TODO: refactor to use switch? with range declared elsewhere
 </script>
 </html>
+
 
 
 
