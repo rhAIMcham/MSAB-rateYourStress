@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
-  <title>Activity: Rate Your Stress</title>
+  <title>Activity: Rate Your Stress </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 <style>
 :root {
   --AIMblue: #4353A3;
@@ -135,7 +138,7 @@ button:hover {
   font-weight: 600;
   font-size: 1.1rem;
 }
-  .labelSmall {
+.labelSmall {
   display: none;
 }
    @media screen and (max-width: 800px) {
@@ -143,7 +146,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
 }
-     .labelSmall {
+.labelSmall {
   display: none;
 }
 }
@@ -151,7 +154,7 @@ button:hover {
 form {
   display: none;
 }
-       .labelSmall {
+.labelSmall {
   display: block;
 }
 }
@@ -159,11 +162,19 @@ form {
 </head>
 <body>
 <div class="containment">
+  <div class="labelSmall">
+    <p>View this form fullscreen to submit your answers.</p>
+  </div>
 <form name="Rate your stress" onsubmit="return false" onchange="calculate(this)">
+  
  <fieldset>
+   
   <legend>Rate your stress</legend>
+
+   
    <div class="formContainer">
      <div class="checkContainer">
+          
   <p>Read the following statements and indicate whether you agree or disagree:</p>
        <p>Left no right yes</p>
      </div>
@@ -327,10 +338,9 @@ form {
 </form>
 
 <div class="buttonBar">
-
 <button id="hideMe" onclick="show(); hideButton()">Results</button>
 </div>
-    <p id="results"></p>
+<p id="results"></p>
 </div>
 </body>
 
@@ -346,17 +356,19 @@ function calculate(form) {
     if (form.elements[name].checked) score += 1;
   });
   form.elements.result.value = score;
-}
-  
+}  
+
 function hideButton() {
-  var z = document.getElementById("hideMe");
+var z = document.getElementById("hideMe");
   z.classList.toggle("hiddenButton");
- }
+}
+
 
  function show() {
   var x = Number(document.getElementById("numericalResult").value);
   var y = document.getElementById("results");
   console.log(x);
+
   if (x <= 3) {
      y.innerHTML = 'You scored between 0 and 3. You are likely more exhausted than stressed – take time to relax.';
   } else if (x > 3 && x < 7) {
@@ -371,10 +383,4 @@ function hideButton() {
  //TODO: refactor to use switch? with range declared elsewhere
 </script>
 </html>
-
-
-
-
-
-
 
