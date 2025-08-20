@@ -39,6 +39,7 @@ li {
   display: inline-block;
   min-width: 60px;
   height: 34px;
+  margin-left: 40px;
 }
 
 .switch input { 
@@ -141,6 +142,10 @@ button:hover {
 .labelSmall {
   display: none;
 }
+legend {
+  font-size: 2rem;
+}
+
    @media screen and (max-width: 800px) {
 .buttonBar {
   display: flex;
@@ -150,28 +155,21 @@ button:hover {
   display: none;
 }
 }
-
-@media screen and (max-width: 500px) {
+   /*  @media screen and (max-width: 300px) {
 form {
   display: none;
 }
-
 .labelSmall {
   display: block;
-  width: 430px;
-  border: 2px solid red;
-  text-align: center;
-  margin: 0;
-  padding: 0;
 }
-}
+}*/
 </style>
 </head>
 <body>
 <div class="containment">
-  <div class="labelSmall">
+<!--<div class="labelSmall">
     <p>View this form fullscreen to submit your answers.</p>
-  </div>
+  </div>-->  
 <form name="Rate your stress" onsubmit="return false" onchange="calculate(this)">
   
  <fieldset>
@@ -182,8 +180,8 @@ form {
    <div class="formContainer">
      <div class="checkContainer">
           
-  <p>Read the following statements and indicate whether you agree or disagree:</p>
-       <p>Left no right yes</p>
+  <h3>Read the following statements and indicate whether you agree or disagree:</h3>
+       <h3>NO/YES</h3>
      </div>
   <!--Check 1-->
      <div class="checkContainer">
